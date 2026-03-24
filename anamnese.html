@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Anamnese - Método SPM - Ander Bellini</title>
+<style>
+        /* Estilos Base */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; padding: 20px; color: #333; margin: 0; }
+        .form-card { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #1a252f; padding-bottom: 10px; font-size: 1.5rem; }
+        h3 { background: #ecf0f1; padding: 10px; border-left: 5px solid #1a252f; margin-top: 25px; font-size: 1.1rem; }
+
+        /* Grid Responsiva */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .full { grid-column: span 2; }
+        label { display: block; margin: 10px 0 5px; font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+
+        /* Esconde os detalhes por padrão */
+        .detalhes-container {
+            display: none;
+            margin-top: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .termo { font-size: 0.9em; background: #fff9e6; padding: 15px; border: 1px solid #ffeeba; margin-top: 20px; border-radius: 6px; }
+        .termo label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-weight: normal; }
+        .termo input[type="checkbox"] { width: auto; min-width: 18px; height: 18px; margin-top: 3px; }
+
+        button { width: 100%; background: #1a252f; color: white; padding: 15px; border: none; border-radius: 6px; font-size: 18px; cursor: pointer; margin-top: 20px; transition: 0.3s; }
+        button:hover { background: #2980b9; }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .form-card { padding: 20px; }
+            .grid { grid-template-columns: 1fr; }
+            .full { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h1>FICHA ANAMNESE - MÉTODO SPM<br>Ander Bellini</h1>
+    <form id="anamneseForm">
+        
+        <div class="grid">
+            <div class="full"><label>*Nome Completo:</label><input required type="text" name="nome"></div>
+            <div><label>*Estado Civil:</label><input required type="text" name="estado_civil"></div>
+            <div><label>*Data de Nascimento:</label><input required type="date" name="nascimento"></div>
+            <div><label>*E-mail:</label><input required type="email" name="email"></div>
+            <div>
+                <label>*Celular/WhatsApp:</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+            </div>
+			
+        </div>
+
+        <h3>Histórico e Práticas</h3>
+        
+        <label>Você possui e/ou pratica alguma religião?</label>
+        <select name="religiao" onchange="toggleField(this)"><option value="Não">Não</option><option value="Sim">Sim</option></select>
+        <div class="detalhes-container"><textarea name="religiao_detalhes" placeholder="Me fale um pouco sobre isso..." rows="2"></textarea></div>
+
+        <label>Você já fez ou faz algum outro tipo de terapia? (Com terapeutas, médicos ou psicólogos)</label>
+		<select name="terapia" onchange="toggleField(this)"><option value="Não">Não</option><option value="Sim">Sim</option></select>
+        <div class="detalhes-container"><textarea name="terapia_detalhes" placeholder="Me fale um pouco sobre isso..." rows="2"></textarea></div>
+		
+        <label>Você possui alguma doença? ou faz algum tratamento ?</label>
+		<select name="doencas" onchange="toggleField(this)"><option value="Não">Não</option><option value="Sim">Sim</option></select>
+        <div class="detalhes-container"><textarea name="doencas_detalhes" placeholder="Me fale um pouco sobre isso..." rows="2"></textarea></div>
+
+        <label>Você faz uso de medicação regular?</label>
+		<select name="medicacao" onchange="toggleField(this)"><option value="Não">Não</option><option value="Sim">Sim</option></select>
+        <div class="detalhes-container"><textarea name="medicacao_detalhes" placeholder="Qual/Quais..." rows="2"></textarea></div>
+		
+		<label>Você faz uso de Álcool? Descreva frequência:</label>
+		<select name="alcool" onchange="toggleField(this)"><option value="Não">Não</option><option value="Sim">Sim</option></select>
+        <div class="detalhes-container"><textarea name="alcool_detalhes" placeholder="Me fale um pouco sobre isso..." rows="2"></textarea></div>
+		
+        <label>Você faz ou já fez uso de substâncias ilícitas (Drogas)? Descreva frequência:</label>
+		<select name="drogas" onchange="toggleField(this)"><option value="Não">Não</option><option value="Sim">Sim</option></select>
+        <div class="detalhes-container"><textarea name="drogas_detalhes" placeholder="Me fale um pouco sobre isso..." rows="2"></textarea></div>
+
+        <label>Você já viu vultos / espíritos ou teve a sensação de ser perseguido(a)? Se sim comente sua experiência.</label>
+        <textarea name="experiencia_espiritual" rows="2"></textarea>
+
+        <h3>Busca e Objetivos</h3>
+        <label>*Qual a sua maior queixa / busca hoje? (Sejam questões Emocionais, Mentaos, Físicas, Espirituais)</label>
+        <textarea name="queixa" rows="3" required></textarea>
+
+        <label>O que você acredita que te impediu de "resolver" isso até aqui?</label>
+        <textarea name="impedimentos" rows="2" required></textarea>
+
+        <label>*O que você espera alcançar através das nossas sessões?</label>
+        <textarea name="expectativas" rows="2" required></textarea>
+
+        <div class="termo">
+            <label>
+                <input type="checkbox" name="termo" value="Aceito" required> 
+                <span>Declaro serem verdadeiras as informações por mim preenchidas na anamnese, tenho plena consciência
+						de que as informações por mim ocultadas são de minha inteira responsabilidade e isento meu terapeuta e ou consultores 
+						de quaisquer responsabilidades geradas por eventuais informações ocultadas.</span>
+			    
+            </label>
+        </div>
+
+        <button type="submit" id="btnEnviar">Finalizar e Enviar</button>
+    </form>
+    <p id="status" style="text-align:center; font-weight:bold;"></p>
+</div>
+
+<script>
+
+    // --- Máscara de Telefone ---
+    const handlePhone = (event) => {
+        let input = event.target;
+        input.value = phoneMask(input.value);
+    }
+
+    const phoneMask = (value) => {
+        if (!value) return "";
+        value = value.replace(/\D/g, ''); // Remove tudo que não é número
+        value = value.replace(/(\d{2})(\d)/, "($1) $2"); // Coloca parênteses no DDD
+        value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Coloca o hífen no número
+        return value;
+    }
+
+    document.getElementById('telefone').addEventListener('keyup', handlePhone);
+	
+	
+	
+    // Função para mostrar/esconder campos
+    function toggleField(selectElement) {
+        const container = selectElement.nextElementSibling;
+        if (selectElement.value === "Sim") {
+            container.style.display = "block";
+            container.querySelector('textarea').required = true; // Torna obrigatório se for Sim
+        } else {
+            container.style.display = "none";
+            container.querySelector('textarea').required = false;
+            container.querySelector('textarea').value = ""; // Limpa se mudar para Não
+        }
+    }
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzOZMisqJ0ZvLX7Tw-pUGBONAHFGJNHkH-gfOQHzChv-xfaehGrsaLEblTmsP6y3GGo/exec';
+    const form = document.getElementById('anamneseForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        status.textContent = "Processando informações...";
+        document.getElementById('btnEnviar').disabled = true;
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+   			    document.getElementById('anamneseForm').style.display = 'none'; // oculta o form
+                status.style.color = "green";
+                status.textContent = "Obrigado, a ficha enviada com sucesso!";
+                form.reset();
+                // Esconde os campos novamente após o reset
+                document.querySelectorAll('.detalhes-container').forEach(c => c.style.display = 'none');
+                document.getElementById('btnEnviar').disabled = false;
+            })
+            .catch(error => {
+                status.style.color = "red";
+                status.textContent = "Erro ao enviar. Verifique a conexão.";
+                document.getElementById('btnEnviar').disabled = false;
+                console.error('Erro!', error.message);
+            });
+    });
+</script>
+
+</body>
+</html>

@@ -53,7 +53,11 @@
         <div class="grid">
             <div class="full"><label>*Nome Completo:</label><input required type="text" name="nome"></div>
             <div><label>*Estado Civil:</label><input required type="text" name="estado_civil"></div>
-            <div><label>*Data de Nascimento:</label><input required type="date" name="nascimento"></div>
+            <!-- <div><label>*Data de Nascimento:</label><input required type="date" name="nascimento"></div> -->
+			<div>
+				<label>*Data de Nascimento:</label>
+				<input type="tel" name="nascimento" id="nascimento" placeholder="DD/MM/AAAA" maxlength="10" required>
+			</div>
             <div><label>*E-mail:</label><input required type="email" name="email"></div>
             <div>
                 <label>*Celular/WhatsApp:</label>
@@ -117,7 +121,23 @@
 </div>
 
 <script>
+	// --- Máscara de Data (DD/MM/AAAA) ---
+	const handleDate = (event) => {
+		let input = event.target;
+		input.value = dateMask(input.value);
+	}
 
+	const dateMask = (value) => {
+		if (!value) return "";
+		value = value.replace(/\D/g, ''); // Remove o que não é número
+		value = value.replace(/(\d{2})(\d)/, "$1/$2"); // Coloca a primeira barra
+		value = value.replace(/(\d{2})(\d)/, "$1/$2"); // Coloca a segunda barra
+		return value;
+	}
+
+	// Ativa o monitoramento do campo de nascimento
+	document.getElementById('nascimento').addEventListener('keyup', handleDate);
+	
     // --- Máscara de Telefone ---
     const handlePhone = (event) => {
         let input = event.target;

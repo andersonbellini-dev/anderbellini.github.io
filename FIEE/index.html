@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aulas e materiais da Formação em Integração de Experiências Espirituais, organizados por módulo.">
+  <title>FIEE | Aulas e materiais</title>
+  <style>
+    :root { color-scheme: light; --ink:#243d49; --muted:#536773; --blue:#216b9b; --line:#dce5e9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:24px; }
+    body { margin:0; background:#f4f7f8; color:var(--ink); font:16px/1.6 'Helvetica Neue',Arial,sans-serif; }
+    a { color:var(--blue); text-underline-offset:4px; }
+    a:hover { text-decoration:underline; }
+    a:focus-visible, input:focus-visible { outline:3px solid #216b9b; outline-offset:4px; }
+    .skip { position:absolute; left:16px; top:-80px; padding:10px; background:white; }
+    .skip:focus { top:8px; }
+    .hero { background:#243d49; color:white; padding:52px 24px 44px; }
+    .container { max-width:980px; margin:auto; }
+    .brand { font-size:14px; font-weight:700; letter-spacing:3px; color:#b9dce9; }
+    h1 { max-width:780px; font-size:clamp(28px,4vw,42px); line-height:1.2; margin:14px 0 20px; letter-spacing:-.7px; }
+    .intro { color:#dae6eb; max-width:680px; margin:0; }
+    .stats { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:26px; font-size:14px; color:#dae6eb; }
+    .stats strong { color:white; }
+    main { padding:32px 24px 48px; }
+    nav { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    nav a { padding:7px 13px; border:1px solid var(--line); border-radius:6px; background:white; font-size:14px; text-decoration:none; }
+    .search { margin-bottom:28px; }
+    label { display:block; font-weight:600; margin-bottom:7px; }
+    input { width:100%; padding:13px 15px; border:1px solid #9eafb8; border-radius:8px; font:inherit; color:var(--ink); background:white; }
+    .module { margin-bottom:22px; border:1px solid var(--line); border-radius:12px; background:white; overflow:hidden; }
+    .module-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; background:#edf4f7; }
+    .eyebrow { display:block; margin:0 0 4px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); }
+    h2 { margin:0; font-size:22px; line-height:1.3; }
+    .badge { flex-shrink:0; border:1px solid #ccdce4; border-radius:20px; padding:3px 11px; font-size:12px; color:var(--muted); }
+    .lessons { padding:0; margin:0; list-style:none; }
+    .lesson { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 24px; border-top:1px solid var(--line); }
+    .lesson-title { display:block; font-size:16px; font-weight:600; text-decoration:none; overflow-wrap:anywhere; }
+    .pending { margin:0; padding:20px 24px; color:var(--muted); }
+    footer { padding:0 24px 36px; text-align:center; color:var(--muted); font-size:13px; }
+    [hidden] { display:none !important; }
+    @media(max-width:560px) { .hero { padding-top:36px; } main { padding:24px 16px; } .module-heading,.lesson { padding:18px; } .lesson { align-items:flex-start; flex-direction:column; gap:10px; } h2 { font-size:19px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    @media print { body { background:white; } .hero { background:white; color:var(--ink); padding:0; } .brand,.intro,.stats,.stats strong { color:var(--ink); } nav,.search,footer { display:none; } .module { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para os módulos</a>
+  <header class="hero"><div class="container">
+    <div class="brand">BIBLIOTECA DE ESTUDOS</div>
+    <h1>Formação em Integração de Experiências Espirituais</h1>
+    <p class="intro">Um espaço para revisitar as aulas e aprofundar seus estudos. Escolha um módulo para acessar os resumos e materiais da formação.</p>
+    <!-- <div class="stats"><span><strong>7</strong> módulos na formação</span><span><strong>14</strong> aulas disponíveis</span><span><strong>1</strong> material complementar</span></div> -->
+  </div></header>
+  <main id="conteudo" class="container">
+    <nav aria-label="Navegação por módulo"><a href="#modulo-1">Módulo 1</a><a href="#modulo-2">Módulo 2</a><a href="#modulo-3">Módulo 3</a><a href="#modulo-4">Módulo 4</a><a href="#modulo-5">Módulo 5</a><a href="#modulo-6">Módulo 6</a><a href="#modulo-7">Módulo 7</a></nav>
+    <div class="search" hidden><label for="busca">Encontre uma aula ou material</label><input id="busca" type="search" placeholder="Busque pelo título ou pelo módulo…" autocomplete="off"></div>
+    <p id="sem-resultados" role="status" hidden>Nenhum material encontrado. Tente outro termo.</p>
+    <section id="modulo-1" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 01</p><h2>Nem tudo é processo</h2></div><span class="badge">7 aulas</span></header><ul class="lessons"><li class="lesson"><div><span class="eyebrow">Aula 01</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2001%20-%20O%20Depois%20que%20ningu%C3%A9m%20acompanha.html">O Depois que ninguém acompanha</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 02</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2002%20-%20Espiritualidade%20e%20Sa%C3%BAde%20-%20O%20Caminho%20do%20Meio.html">Espiritualidade e Saúde - O Caminho do Meio</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 03</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2003%20-%20Da%20floresta%20%C3%A0%20cidade.html">Da floresta à cidade</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 04</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2004%20-%20O%20que%20acontece%20no%20corpo%20e%20na%20mente%20nos%20estados%20ampliados%20de%20consci%C3%AAncia.html">O que acontece no corpo e na mente nos estados ampliados de consciência</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 05</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2005%20-%20Antes%20do%20depois%20-%20hist%C3%B3ria%2C%20medicamentos%2C%20neurodiverg%C3%AAncia%20e%20quando%20n%C3%A3o%20%C3%A9%20o%20momento.html">Antes do depois - história, medicamentos, neurodivergência e quando não é o momento</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 06</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2006%20-%20Um%20exerc%C3%ADcio%20de%20integra%C3%A7%C3%A3o%20-%20a%20linha%20do%20tempo%20das%20nossas%20experi%C3%AAncias.html">Um exercício de integração - a linha do tempo das nossas experiências</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 07</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%201%20-%20Aula%2007%20-%20Revis%C3%A3o%20do%20M%C3%B3dulo%201%20-%20Nem%20tudo%20%C3%A9%20processo.html">Revisão do Módulo 1 - Nem tudo é processo</a></div></li>
+	
+	</ul></section>
+    <section id="modulo-2" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 02</p><h2>Pouso</h2></div><span class="badge">7 aulas</span></header><ul class="lessons"><li class="lesson"><div><span class="eyebrow">Aula 01</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%201%20-%20O%20Que%20%C3%89%20Esperado%20P%C3%B3s%20Uma%20Experi%C3%AAncia%20Espiritual%20Profunda.html">O Que É Esperado Pós Uma Experiência Espiritual Profunda</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 02</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%202%20-%20Sinais%20de%20Alerta%20na%20Mente%20e%20na%20Consci%C3%AAncia.html">Sinais de Alerta na Mente e na Consciência</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 03</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%203%20-%20Sinais%20de%20Alerta%20do%20Nosso%20Corpo.html">Sinais de Alerta do Nosso Corpo</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 04</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%204%20-%20Crises%20Sensoriais%20e%20Neurodiverg%C3%AAncia.html">Crises Sensoriais e Neurodivergência</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 05</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%205%20-%20Encaminhar%20Sem%20Abandonar%20e%20o%20Retorno%20em%2024h%2C%207d%20e%2030d.html">Encaminhar Sem Abandonar e o Retorno em 24h, 7d e 30d</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 06</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%206%20-%20Um%20Exerc%C3%ADcio%20de%20Integra%C3%A7%C3%A3o%20%E2%80%93%20O%20Meu%20Mapa%20de%20Pouso.html">Um Exercício de Integração – O Meu Mapa de Pouso</a></div></li><li class="lesson"><div><span class="eyebrow">Aula 07</span><a class="lesson-title" href="https://anderbellini.com.br/FIEE/M%C3%B3dulo%202%20-%20Aula%207%20-%20Revis%C3%A3o%20do%20M%C3%B3dulo%20-%20Pouso.html">Revisão do Módulo - Pouso</a></div></li></ul></section>
+    <section id="modulo-3" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 03</p><h2>Novos conteúdos</h2></div><span class="badge">Em breve</span></header><p class="pending">Os materiais deste módulo ainda não estão disponíveis.</p></section>
+    <section id="modulo-4" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 04</p><h2>Novos conteúdos</h2></div><span class="badge">Em breve</span></header><p class="pending">Os materiais deste módulo ainda não estão disponíveis.</p></section>
+    <section id="modulo-5" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 05</p><h2>Novos conteúdos</h2></div><span class="badge">Em breve</span></header><p class="pending">Os materiais deste módulo ainda não estão disponíveis.</p></section>
+    <section id="modulo-6" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 06</p><h2>Novos conteúdos</h2></div><span class="badge">Em breve</span></header><p class="pending">Os materiais deste módulo ainda não estão disponíveis.</p></section>
+    <section id="modulo-7" class="module"><header class="module-heading"><div><p class="eyebrow">Módulo 07</p><h2>Novos conteúdos</h2></div><span class="badge">Em breve</span></header><p class="pending">Os materiais deste módulo ainda não estão disponíveis.</p></section>    
+  </main>
+  <footer>Autora: Pamela Zequin ( Todos os direitos reservados ).</footer>
+  <script>
+    const search = document.querySelector('#busca');
+    document.querySelector('.search').hidden = false;
+    const normalize = value => value.normalize('NFD').replace(/[̀-ͯ]/g, '').toLocaleLowerCase('pt-BR');
+    search.addEventListener('input', () => {
+      const query = normalize(search.value.trim());
+      let visible = 0;
+      document.querySelectorAll('.module').forEach(module => {
+        const heading = module.querySelector('header').textContent;
+        const rows = [...module.querySelectorAll('.lesson')];
+        rows.forEach(row => { row.hidden = !normalize(heading + ' ' + row.textContent).includes(query); });
+        module.hidden = query ? !rows.some(row => !row.hidden) : false;
+        if (!module.hidden) visible++;
+      });
+      document.querySelector('#sem-resultados').hidden = visible > 0;
+    });
+  </script>
+</body>
+</html>
